@@ -21,8 +21,16 @@
             }
         });
     </script>
+    <script>
+        function fixGameView() {
+            const gameView= document.getElementById("gameView");
+            if (gameView.clientHeight*1.2> gameView.clientWidth) {
+                gameView.style.height= Math.floor(gameView.clientWidth/1.2)+ "px";
+            }
+        }
+    </script>
 </head>
-<body style="overflow:hidden; margin:0; padding:0;">
+<body style="overflow:hidden; margin:0; padding:0;" onload="fixGameView()">
     <div id="gameView" class="webgl-content" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding:0px;">
         <div id="gameContainer" style="width: 100%; height: 100%; margin: 0px; padding:0px;"></div>
     </div>
